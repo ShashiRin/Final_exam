@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="vue/index.html" target="_blank">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 2</h1><br>
+    <div>
+        <table border="1">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Mobile</td>
+                <td>Email</td>
+            </tr>
+        </table>
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <a href="one.html">Problem 1</a> |
+        <a href="two.html">Problem 2</a> |
+        <a href="three.html">Problem 3</a> |
+        <a href="four.html">Problem 4</a> |
+        <a href="five.html">Problem 5</a> |
+        <a href="six.html">Problem 6</a> |
+        <a href="seven.html">Problem 7</a> |
+        <a href="eight.html">Problem 8</a> |
+        <a href="vue/index.html" target="_blank">Problem 9</a>
+    </nav> 
+    <br><br>
+    <h1>Problem 2</h1><br>
+    <div>
+        <table id="dataTable" border="1">
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Mobile</td>
+                <td>Email</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        // Fetch data from the API and populate the table
+        fetch('https://codeandcareer.com/assignments/api/api.php')
+            .then(response => response.json())
+            .then(data => {
+                // Get the table element
+                const table = document.getElementById('dataTable');
+
+                // Iterate over the data and create rows
+                data.forEach(item => {
+                    const row = document.createElement('tr');
+
+                    const cellId = document.createElement('td');
+                    cellId.textContent = item.id;
+                    row.appendChild(cellId);
+
+                    const cellName = document.createElement('td');
+                    cellName.textContent = item.name;
+                    row.appendChild(cellName);
+
+                    const cellMobile = document.createElement('td');
+                    cellMobile.textContent = item.mobile;
+                    row.appendChild(cellMobile);
+
+                    const cellEmail = document.createElement('td');
+                    cellEmail.textContent = item.email;
+                    row.appendChild(cellEmail);
+
+                    // Append the row to the table
+                    table.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
+</body>
+</html>
